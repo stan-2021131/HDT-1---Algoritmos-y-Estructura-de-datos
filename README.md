@@ -1,2 +1,5 @@
 # HDT-1---Algoritmos-y-Estructura-de-datos
-Integrantes
+Integrantes:
+  Alejandra Avilés 24722
+  Jackelyn Girón 24737
+  Sergio Tan 24759
