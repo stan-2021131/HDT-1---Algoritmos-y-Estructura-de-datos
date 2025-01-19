@@ -26,7 +26,7 @@ public class Main {
                 System.out.println(message);
                 break;
             case 4: 
-                System.out.println("The velocity from the blender is: " + myBlender.getSpeed());
+                System.out.println("The velocity from the blender is: " + myBlender.GetSpeed());
                 break;
             case 5:
                 myBlender.SpeedUp();
