@@ -15,7 +15,7 @@ public class Blender implements IBlender{
     @Override
     public void SpeedUp() {
         // TODO Auto-generated method stub
-        if(speed < 10) speed +=1;
+        if(speed < 10 && IsFull()) speed +=1;
     }
     @Override
     public boolean IsFull() {
