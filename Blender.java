@@ -1,7 +1,6 @@
 public class Blender implements IBlender{
     private double capacity = 0.00;
     private int speed;
-    private double capacityMax = 3.00;
 
     public void setCapacity(double newCapacity){
         capacity = newCapacity;
@@ -19,22 +18,29 @@ public class Blender implements IBlender{
         if(speed < 10 && IsFull()) speed +=1;
     }
     @Override
+        // TODO Auto-generated method stub
     public boolean IsFull() {
-        return capacity >= capacityMax;
-    }
-    @Override
-    public void Fill() {
-        if (capacity < capacityMax){
-            capacity += 1;
-            if (capacity > capacityMax){
-                capacity = capacityMax;
-            }
+        if (capacity > 0) {
+            return true;
+        } else {
+            return false;
         }
     }
     @Override
+    public void Fill() {
+        // TODO Auto-generated method stub
+        if (capacity == 0) {
+            capacity++;
+        } else {
+            throw new IllegalStateException("La licuadora ya está llena.");  }
+    }
+    @Override
     public void Empty() {
-        if (capacity > 0 & capacity <= capacityMax){
-            capacity -= 1;
+        // TODO Auto-generated method stub
+        if (IsFull()){
+            capacity = 0.0;
+        } else {
+            throw new IllegalStateException("La licuadora ya está vacía.");
         }
     }
     @Override
