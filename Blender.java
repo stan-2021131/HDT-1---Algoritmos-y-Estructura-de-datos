@@ -1,6 +1,7 @@
 public class Blender implements IBlender{
     private double capacity = 0.00;
     private int speed;
+    private double capacityMax = 3.00;
 
     public void setCapacity(double newCapacity){
         capacity = newCapacity;
@@ -21,18 +22,22 @@ public class Blender implements IBlender{
     }
     @Override
     public boolean IsFull() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'IsFull'");
+        return capacity >= capacityMax;
     }
     @Override
     public void Fill() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Fill'");
+        if (capacity < capacityMax){
+            capacity += 1;
+            if (capacity > capacityMax){
+                capacity = capacityMax;
+            }
+        }
     }
     @Override
     public void Empty() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'Empty'");
+        if (capacity > 0 & capacity <= capacityMax){
+            capacity -= 1;
+        }
     }
     @Override
     public void SpeedDown() {
