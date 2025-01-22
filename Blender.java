@@ -12,13 +12,11 @@ public class Blender implements IBlender{
     public double getCapacity(){
         return capacity;
     }
-    public int getSpeed(){
-        return speed;
-    }
+    
     @Override
     public void SpeedUp() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'SpeedUp'");
+        if(speed < 10 && IsFull()) speed +=1;
     }
     @Override
     public boolean IsFull() {
@@ -42,11 +40,11 @@ public class Blender implements IBlender{
     @Override
     public void SpeedDown() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'SpeedDown'");
+        if(speed > 0) speed += -1;
     }
     @Override
     public int GetSpeed() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'GetSpeed'");
+       return speed;
     }
 }
