@@ -14,12 +14,19 @@ public class Main {
         selectedOption = input.nextInt();
         switch (selectedOption) {
             case 1:
-                myBlender.Fill();
-                System.out.println("The blender is filling up");
+                if(myBlender.IsFull() == false){
+                    myBlender.Fill();
+                    System.out.println("The blender is filling up");
+                }else{
+                    System.out.println("The blender is already fill.");  }
                 break;
             case 2:
-                myBlender.Empty();
-                System.out.println("The blender is emptying");
+                if(myBlender.IsFull()){
+                    myBlender.Empty();
+                    System.out.println("The blender is emptying");
+                }else{
+                    System.out.println("The blender is already empty");
+                }
                 break;
             case 3:
                 String message = myBlender.IsFull() ? "The blender is full": "The blender is empty";

@@ -29,19 +29,14 @@ public class Blender implements IBlender{
     @Override
     public void Fill() {
         // TODO Auto-generated method stub
-        if (capacity == 0) {
+        if (capacity == 0)
             capacity++;
-        } else {
-            throw new IllegalStateException("La licuadora ya está llena.");  }
-    }
+        }
     @Override
     public void Empty() {
         // TODO Auto-generated method stub
-        if (IsFull()){
+        if (IsFull())
             capacity = 0.0;
-        } else {
-            throw new IllegalStateException("La licuadora ya está vacía.");
-        }
     }
     @Override
     public void SpeedDown() {
