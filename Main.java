@@ -9,6 +9,7 @@ public class Main {
     Scanner input = new Scanner(System.in);
 
     do {
+        System.out.println();
         System.out.println("---Blender Controller---");
         System.out.println("-Select an option:\n1)Fill\n2)Empty\n3)Ckeck fill\n4)Check Velocity\n5)Speed Up\n6)Speed Down\n7)Exit");
         selectedOption = input.nextInt();
@@ -36,12 +37,24 @@ public class Main {
                 System.out.println("The velocity from the blender is: " + myBlender.GetSpeed());
                 break;
             case 5:
-                myBlender.SpeedUp();
-                System.out.println("The speed increments in 1");
+                if (myBlender.IsFull()== false) {
+                    System.out.println("Speed cannot be increased because the blender is empty");
+                }else if (myBlender.GetSpeed() == 10) {
+                    System.out.println("The speed cannot be increased further");
+                }else{
+                    myBlender.SpeedUp();
+                    System.out.println("The speed increments in 1");
+                }
                 break;
             case 6:
-                myBlender.SpeedDown();
-                System.out.println("The speed decrease in 1");
+                if (myBlender.IsFull()== false) {
+                System.out.println("Speed cannot be lowered because the blender is empty");
+                }else if (myBlender.GetSpeed() == 0) {
+                    System.out.println("The speed cannot be reduced further");
+                }else{
+                    myBlender.SpeedDown();
+                    System.out.println("The speed decrease in 1");
+                }
                 break;
             case 7:
                 isClose = true;
